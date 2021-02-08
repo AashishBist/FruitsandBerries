@@ -19,8 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         ///1.Initialize UIWindow
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
+        
         /// 2. Initialize test Coordinator
         let baseNavigationController = BaseNavigationController()
+        ///Make BaseNavigationController as navigatoncontroller for first coordinator i.e.homecoordinator
         homePageCoordinator = HomePageCoordinator(navigationController: baseNavigationController)
         
 //        let homeView = HomeView()

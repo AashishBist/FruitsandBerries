@@ -18,7 +18,7 @@ class HomeViewModel:BaseViewModel{
         self.fruits = fruits
         
     }
-    //Whensome butto is clicked to navigate trigger occures
+    //Whensome button is clicked to navigate trigger occures
     //These triggers cause DRY violation
     //Instead of this we make enum for these different caeses to listen these triggers
 //    var gotohomePage: (()->Void)?

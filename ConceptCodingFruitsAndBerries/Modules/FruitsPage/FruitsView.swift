@@ -60,15 +60,6 @@ final class FruitsView:BaseView{
         scrollview.translatesAutoresizingMaskIntoConstraints = false
         return scrollview
     }()
-    private lazy var scrollView:UIScrollView = {
-        let scrollview = UIScrollView()
-        scrollview.backgroundColor = .none
-//        scrollview.isScrollEnabled = true
-//        scrollview.isDirectionalLockEnabled = true
-//        scrollview.contentSize = CGSize(width: frame.size.width, height: 2200)
-        scrollview.translatesAutoresizingMaskIntoConstraints = false
-        return scrollview
-    }()
     
     private lazy var topContainer:UIView = {
         let container = UIView()
@@ -81,7 +72,7 @@ final class FruitsView:BaseView{
         let container = UIView()
         
         container.backgroundColor = .white
-//        container.clipsToBounds = true
+
         container.layer.cornerRadius = 40
         container.translatesAutoresizingMaskIntoConstraints = false
         return container
@@ -91,7 +82,7 @@ final class FruitsView:BaseView{
        let label = UILabel()
         guard let fruit = self.fruit else {return label}
         label.text = fruit.name
-        label.font = UIFont.boldSystemFont(ofSize: 30)
+        label.font = UIFont.boldSystemFont(ofSize: 22)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -100,6 +91,8 @@ final class FruitsView:BaseView{
        let nutritionButton = UIButton()
         nutritionButton.backgroundColor = fruit?.color
         nutritionButton.setTitle("Nutritional Value", for: .normal)
+        nutritionButton.titleLabel?.font = .systemFont(ofSize: 15)
+        nutritionButton.attributedTitle(for: .normal)
         nutritionButton.setTitleColor(.black, for: .normal)
         nutritionButton.tintAdjustmentMode = .dimmed
         nutritionButton.layer.borderWidth = 2
@@ -175,7 +168,7 @@ final class FruitsView:BaseView{
     
     private lazy var productDescriptionTitle:UILabel = {
         let label = UILabel()
-         label.font = UIFont.boldSystemFont(ofSize: 20)
+         label.font = UIFont.boldSystemFont(ofSize: 18)
          label.text = "Product Description"
          label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -209,7 +202,6 @@ final class FruitsView:BaseView{
     private lazy var loveButton:UIButton = {
         var lbutton = UIButton()
         lbutton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
-
         guard let fruit = fruit else {return lbutton}
         lbutton.tintColor = fruit.color
         lbutton.layer.borderWidth = 1
@@ -220,13 +212,12 @@ final class FruitsView:BaseView{
         return lbutton
     }()
     
-//    lazy var itemview: UIView = {
-//        let view = UIView()
-//        guard let fruit = fruit else{return view}
-////        view.backgroundColor = .blue
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//        return view
-//    }()
+    lazy var mainItemsContainerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .none
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     lazy var fullScreenScrollView: UIScrollView = {
         let view = UIScrollView()
@@ -249,17 +240,18 @@ final class FruitsView:BaseView{
         
         guard let fruit  = fruit else {return}
         backgroundColor = fruit.color
-        addSubview(leftNavBtn)
-        addSubview(rightNavBtn)
-        addSubview(topScrollView)
+        mainItemsContainerView.addSubview(leftNavBtn)
+        mainItemsContainerView.addSubview(rightNavBtn)
+        mainItemsContainerView.addSubview(topScrollView)
+//        addSubview(bottomScrollView)
         addSubview(fullScreenScrollView)
-//        fullScreenScrollView.addSubview(itemview)
-        addSubview(scrollView)
-        addSubview(topContainer)
-        
+        fullScreenScrollView.addSubview(mainItemsContainerView)
+//        addSubview(scrollView)
+//        itemView.addSubview(topContainer)
+        mainItemsContainerView.addSubview(topContainer)
         topContainer.addSubview(topFruitCollectionView)
 //        topContainer.addSubview(fruitImage)
-        addSubview(bottomContainer)
+        mainItemsContainerView.addSubview(bottomContainer)
         bottomContainer.addSubview(productDescriptionTitle)
         bottomContainer.addSubview(productDescription)
         bottomContainer.addSubview(fruitNameLabel)
@@ -276,8 +268,10 @@ final class FruitsView:BaseView{
         buttonStack.addArrangedSubview(increaseItemNumberButton)
         
         topScrollViewLayout()
+//        bottomScrollViewLayout()
         fullScreenScrollViewLayout()
-        scrollViewLayout()
+        setItemViewLayout()
+//        scrollViewLayout()
         setContainerLayout()
         fruitCollectionViewlAyout()
 //        setImageLayout()
@@ -293,34 +287,36 @@ final class FruitsView:BaseView{
         NSLayoutConstraint.activate([topScrollView.leadingAnchor.constraint(equalTo: topContainer.leadingAnchor, constant: 0),topScrollView.trailingAnchor.constraint(equalTo: topContainer.trailingAnchor, constant: 0),topScrollView.topAnchor.constraint(equalTo: topContainer.topAnchor, constant: 0),topScrollView.bottomAnchor.constraint(equalTo: topContainer.bottomAnchor, constant: 0)])
     }
     
-    private func fullScreenScrollViewLayout(){
-        NSLayoutConstraint.activate([fullScreenScrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),fullScreenScrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),fullScreenScrollView.topAnchor.constraint(equalTo: topAnchor, constant: 0),fullScreenScrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)])
+    private func setItemViewLayout(){
+        NSLayoutConstraint.activate([mainItemsContainerView.topAnchor.constraint(equalTo: fullScreenScrollView.topAnchor),
+                                     mainItemsContainerView.bottomAnchor.constraint(equalTo: fullScreenScrollView.bottomAnchor),
+                                     mainItemsContainerView.leadingAnchor.constraint(equalTo: fullScreenScrollView.leadingAnchor),
+                                     mainItemsContainerView.trailingAnchor.constraint(equalTo: fullScreenScrollView.trailingAnchor),mainItemsContainerView.widthAnchor.constraint(equalTo: fullScreenScrollView.widthAnchor, multiplier: 1)
+                                    ])
     }
     
-    private func scrollViewLayout(){
-        NSLayoutConstraint.activate([scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0), scrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),scrollView.topAnchor.constraint(equalTo: topContainer.bottomAnchor, constant: 0)])
+    private func fullScreenScrollViewLayout(){
+        NSLayoutConstraint.activate([fullScreenScrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),fullScreenScrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+                                     fullScreenScrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+                                     fullScreenScrollView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+        ])
     }
     
     private func setContainerLayout(){
-        NSLayoutConstraint.activate([topContainer.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),topContainer.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.5),topContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),topContainer.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
+        NSLayoutConstraint.activate([topContainer.topAnchor.constraint(equalTo: mainItemsContainerView.topAnchor, constant: 20),topContainer.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.5),topContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),topContainer.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
+                                     topContainer.widthAnchor.constraint(equalTo: mainItemsContainerView.widthAnchor, multiplier: 1),
                                      
-                                     bottomContainer.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),bottomContainer.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),bottomContainer.topAnchor.constraint(equalTo: scrollView.topAnchor),bottomContainer.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 0)])
+                                     bottomContainer.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 0),bottomContainer.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: 0),
+                                     bottomContainer.widthAnchor.constraint(equalTo: mainItemsContainerView.widthAnchor, multiplier: 0),bottomContainer.topAnchor.constraint(equalTo: topContainer.bottomAnchor),bottomContainer.bottomAnchor.constraint(equalTo: mainItemsContainerView.bottomAnchor, constant: 0),])
     }
     private func fruitCollectionViewlAyout(){
-        NSLayoutConstraint.activate([topFruitCollectionView.leadingAnchor.constraint(equalTo: topScrollView.leadingAnchor, constant: 10),topFruitCollectionView.trailingAnchor.constraint(equalTo: topScrollView.trailingAnchor, constant: -10),
+        NSLayoutConstraint.activate([topFruitCollectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),topFruitCollectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
                                      topFruitCollectionView.heightAnchor.constraint(equalTo: topScrollView.heightAnchor, multiplier: 0.9),
             topFruitCollectionView.topAnchor.constraint(equalTo: topScrollView.topAnchor, constant: 0)])
     }
     
-//    private func setImageLayout(){
-//        NSLayoutConstraint.activate([fruitImage.centerXAnchor.constraint(equalTo: centerXAnchor),fruitImage.heightAnchor.constraint(equalTo: topFruitCollectionView.heightAnchor, multiplier: 0.8),fruitImage.widthAnchor.constraint(equalTo: topFruitCollectionView.widthAnchor, multiplier: 0.8),fruitImage.topAnchor.constraint(equalTo: topContainer.topAnchor, constant: 20),
-//
-//
-//        ])
-//    }
-    
     private func setFruitName(){
-        NSLayoutConstraint.activate([fruitNameLabel.leadingAnchor.constraint(equalTo: bottomContainer.leadingAnchor, constant: 30),fruitNameLabel.topAnchor.constraint(equalTo: bottomContainer.topAnchor, constant: 30),fruitNameLabel.widthAnchor.constraint(equalTo: bottomContainer.widthAnchor, multiplier: 0.4),fruitNameLabel.heightAnchor.constraint(equalToConstant: 40)])
+        NSLayoutConstraint.activate([fruitNameLabel.leadingAnchor.constraint(equalTo: bottomContainer.leadingAnchor, constant: 30),fruitNameLabel.topAnchor.constraint(equalTo: bottomContainer.topAnchor, constant: 30),fruitNameLabel.widthAnchor.constraint(equalTo: bottomContainer.widthAnchor, multiplier: 0.4),fruitNameLabel.heightAnchor.constraint(equalToConstant: 50)])
     }
     
     private func setNutrtionalValueButtonLayout(){
@@ -339,7 +335,7 @@ final class FruitsView:BaseView{
         productDescription.leadingAnchor.constraint(equalTo: bottomContainer.leadingAnchor, constant: 20),
         productDescription.trailingAnchor.constraint(equalTo: bottomContainer.trailingAnchor, constant: -20),
         productDescription.topAnchor.constraint(equalTo: productDescriptionTitle.bottomAnchor),
-        productDescription.heightAnchor.constraint(equalToConstant: 100),])
+        productDescription.heightAnchor.constraint(equalTo: bottomContainer.heightAnchor, multiplier: 0.3),])
     }
     
     private func perLborEachLabel(){
@@ -358,9 +354,11 @@ final class FruitsView:BaseView{
     
     private func loveAndAddToCartButtonLayout(){
         NSLayoutConstraint.activate([loveButton.leadingAnchor.constraint(equalTo: fruitNameLabel.leadingAnchor, constant: 0),loveButton.widthAnchor.constraint(equalTo: addToCartButton.widthAnchor, multiplier: 0.3),
-                                     loveButton.heightAnchor.constraint(equalTo: productDescription.heightAnchor, multiplier: 0.7),
-        loveButton.topAnchor.constraint(equalTo: productDescription.bottomAnchor, constant: 10),
-        addToCartButton.leadingAnchor.constraint(equalTo: loveButton.trailingAnchor, constant: 20),addToCartButton.widthAnchor.constraint(equalTo: bottomContainer.widthAnchor, multiplier: 0.6),addToCartButton.heightAnchor.constraint(equalTo: loveButton.heightAnchor, multiplier: 1),addToCartButton.topAnchor.constraint(equalTo: productDescription.bottomAnchor, constant: 10)])
+//                                     loveButton.heightAnchor.constraint(equalTo: productDescription.heightAnchor, multiplier: 0.7),
+                                     loveButton.topAnchor.constraint(equalTo: productDescription.bottomAnchor, constant: 10),loveButton.bottomAnchor.constraint(equalTo: bottomContainer.bottomAnchor,constant: -20),
+        addToCartButton.leadingAnchor.constraint(equalTo: loveButton.trailingAnchor, constant: 20),addToCartButton.widthAnchor.constraint(equalTo: bottomContainer.widthAnchor, multiplier: 0.6),
+//        addToCartButton.heightAnchor.constraint(equalTo: loveButton.heightAnchor, multiplier: 1),
+        addToCartButton.topAnchor.constraint(equalTo: productDescription.bottomAnchor, constant: 10),addToCartButton.bottomAnchor.constraint(equalTo: bottomContainer.bottomAnchor,constant: -20)])
     }
     
     @objc private func increaseItemsButtonClicked(){

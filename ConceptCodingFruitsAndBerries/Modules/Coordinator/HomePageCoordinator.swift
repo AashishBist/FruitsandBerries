@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 final class HomePageCoordinator{
-
+    ///navigationController helps to navigate from one controller to another controller.
     private let navigationController:BaseNavigationController
     private var fruit:Fruit?
     
@@ -23,7 +23,7 @@ final class HomePageCoordinator{
         
         navigationController.makeNavBarTransparent(navigationController: navigationController)
         showHomePageController()
-        showFruitsPageController()
+//        showFruitsPageController()
     }
     
 //    Setting your first controller as rootController
@@ -34,7 +34,6 @@ final class HomePageCoordinator{
         let homeView = HomeView()
         let homeViewModel = HomeViewModel(with: fruitsArray)
         let homepageController = HomePageViewController(baseView: homeView, baseViewModel: homeViewModel)
-        
 //        to prevent auto reference cycle
 //        We used unowned instead of weak as we know this coordinator will not be terminated until the end of app cycle.
         //2.Listen for trigger
@@ -62,8 +61,9 @@ final class HomePageCoordinator{
                 guard let fruit = fruit else {return}
         let fruitpageViewModel = FruitsViewModel(with: fruit)
         let fruitpageController  = FruitsViewController(baseView: fruitpageView, baseViewModel: fruitpageViewModel)
-        
+
         navigationController.pushViewController(fruitpageController, animated: true)
+        
     }
     
     private func showSecondPageController(){

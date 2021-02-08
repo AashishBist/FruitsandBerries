@@ -12,7 +12,7 @@ import UIKit
 class NutritionViewmodel:BaseViewModel{
     
 //    var fruit:Fruit
-//    
+//
 //    init(with fruit: Fruit){
 //        self.fruit = fruit
 //    }

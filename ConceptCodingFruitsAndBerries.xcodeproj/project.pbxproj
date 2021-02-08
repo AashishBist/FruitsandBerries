@@ -12,8 +12,6 @@
 		6A539DD225B6BC4D00922AFE /* CollectionViewImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A539DD125B6BC4D00922AFE /* CollectionViewImage.swift */; };
 		6A5AD49125B1689B009B2FF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD49025B1689B009B2FF5 /* AppDelegate.swift */; };
 		6A5AD49325B1689B009B2FF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD49225B1689B009B2FF5 /* SceneDelegate.swift */; };
-		6A5AD49A25B1689E009B2FF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A5AD49925B1689E009B2FF5 /* Assets.xcassets */; };
-		6A5AD49D25B1689E009B2FF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5AD49B25B1689E009B2FF5 /* LaunchScreen.storyboard */; };
 		6A5AD4A525B1691C009B2FF5 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD4A425B1691C009B2FF5 /* HomePageViewController.swift */; };
 		6A5AD4A725B1692F009B2FF5 /* FruitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD4A625B1692F009B2FF5 /* FruitsViewController.swift */; };
 		6A5AD4AA25B16AD9009B2FF5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD4A925B16AD9009B2FF5 /* HomeView.swift */; };
@@ -31,6 +29,8 @@
 		6A73EDC225BADEB800DF875C /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A73EDC125BADEB800DF875C /* SecondController.swift */; };
 		6A73EDC525BADEC500DF875C /* SecondViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A73EDC425BADEC500DF875C /* SecondViewModel.swift */; };
 		6A73EDC925BAEAF900DF875C /* AppRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A73EDC825BAEAF900DF875C /* AppRoutes.swift */; };
+		6A7AD17725D12CE200266CD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A5AD49925B1689E009B2FF5 /* Assets.xcassets */; };
+		6A8B94E625CFE5CD00648EDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5AD49B25B1689E009B2FF5 /* LaunchScreen.storyboard */; };
 		6AA1D0E325B936F200160E34 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA1D0E225B936F200160E34 /* AppCoordinator.swift */; };
 		6AA1D0E725B98EDC00160E34 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA1D0E625B98EDC00160E34 /* BasePresenter.swift */; };
 		6AA1D0EA25B98EF200160E34 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA1D0E925B98EF200160E34 /* BaseNavigationController.swift */; };
@@ -312,8 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A5AD49D25B1689E009B2FF5 /* LaunchScreen.storyboard in Resources */,
-				6A5AD49A25B1689E009B2FF5 /* Assets.xcassets in Resources */,
+				6A7AD17725D12CE200266CD0 /* Assets.xcassets in Resources */,
+				6A8B94E625CFE5CD00648EDE /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

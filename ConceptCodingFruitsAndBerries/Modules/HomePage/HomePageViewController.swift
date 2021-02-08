@@ -65,8 +65,11 @@ extension HomePageViewController:UICollectionViewDelegate,UICollectionViewDataSo
         let fruit = fruitsArray[indexPath.row]
         let fruitModel = FruitsViewModel(with: fruit)
         let fruitView = FruitsView()
+//        let nutritionModel = NutritionViewmodel(with: fruit)
+//        let nutritionView = NutritionView()
 //        We must initialize the controller in cooordinator use that instance here
         let fruitscontroller = FruitsViewController(baseView: fruitView, baseViewModel:fruitModel)
+//        let nutritionController = NutritionalValueController(baseView: nutritionView, baseViewModel: nutritionModel)
         guard let navigationController = navigationController else {return}
         navigationController.pushViewController(fruitscontroller, animated: true)
 

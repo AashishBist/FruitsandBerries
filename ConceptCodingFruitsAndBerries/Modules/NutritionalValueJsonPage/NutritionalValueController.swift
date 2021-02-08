@@ -26,6 +26,7 @@ class NutritionalValueController:BaseViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         screenView.create()
+        
 //         let fruit = screenViewModel.fruit else {return}
 //        screenView.backgroundColor = fruit.color
 //        screenView.backgroundColor = .red
