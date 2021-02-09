@@ -23,6 +23,13 @@
 		6A5AD4BE25B1A039009B2FF5 /* FruitsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD4BD25B1A039009B2FF5 /* FruitsView.swift */; };
 		6A5AD4C025B1A639009B2FF5 /* FruitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD4BF25B1A639009B2FF5 /* FruitsViewModel.swift */; };
 		6A5AD4C325B1AD1A009B2FF5 /* MyCustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5AD4C225B1AD1A009B2FF5 /* MyCustomCollectionCell.swift */; };
+		6A60777F25D24AFD00AE401B /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60777E25D24AFD00AE401B /* SignupView.swift */; };
+		6A60778325D24B0E00AE401B /* SignupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60778225D24B0E00AE401B /* SignupController.swift */; };
+		6A60778625D24B2200AE401B /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60778525D24B2200AE401B /* SignupViewModel.swift */; };
+		6A60778925D24B3700AE401B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60778825D24B3700AE401B /* LoginView.swift */; };
+		6A60778C25D24B4B00AE401B /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60778B25D24B4B00AE401B /* LoginController.swift */; };
+		6A60778F25D24B5900AE401B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60778E25D24B5900AE401B /* LoginViewModel.swift */; };
+		6A60779325D261B300AE401B /* BaseUIElementsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A60779225D261B300AE401B /* BaseUIElementsConfig.swift */; };
 		6A6B408225B689CC0066176D /* FruitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B408125B689CC0066176D /* FruitCollectionViewCell.swift */; };
 		6A73EDA225BA9C9300DF875C /* HomePageCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A73EDA125BA9C9300DF875C /* HomePageCoordinator.swift */; };
 		6A73EDBF25BADEA900DF875C /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A73EDBE25BADEA900DF875C /* SecondView.swift */; };
@@ -31,7 +38,6 @@
 		6A73EDC925BAEAF900DF875C /* AppRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A73EDC825BAEAF900DF875C /* AppRoutes.swift */; };
 		6A7AD17725D12CE200266CD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A5AD49925B1689E009B2FF5 /* Assets.xcassets */; };
 		6A8B94E625CFE5CD00648EDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5AD49B25B1689E009B2FF5 /* LaunchScreen.storyboard */; };
-		6AA1D0E325B936F200160E34 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA1D0E225B936F200160E34 /* AppCoordinator.swift */; };
 		6AA1D0E725B98EDC00160E34 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA1D0E625B98EDC00160E34 /* BasePresenter.swift */; };
 		6AA1D0EA25B98EF200160E34 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA1D0E925B98EF200160E34 /* BaseNavigationController.swift */; };
 		6AB30D9125C7F25400E98AF0 /* NutritionalValueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB30D9025C7F25400E98AF0 /* NutritionalValueController.swift */; };
@@ -61,13 +67,19 @@
 		6A5AD4BD25B1A039009B2FF5 /* FruitsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsView.swift; sourceTree = "<group>"; };
 		6A5AD4BF25B1A639009B2FF5 /* FruitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsViewModel.swift; sourceTree = "<group>"; };
 		6A5AD4C225B1AD1A009B2FF5 /* MyCustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomCollectionCell.swift; sourceTree = "<group>"; };
+		6A60777E25D24AFD00AE401B /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		6A60778225D24B0E00AE401B /* SignupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupController.swift; sourceTree = "<group>"; };
+		6A60778525D24B2200AE401B /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		6A60778825D24B3700AE401B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6A60778B25D24B4B00AE401B /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		6A60778E25D24B5900AE401B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6A60779225D261B300AE401B /* BaseUIElementsConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUIElementsConfig.swift; sourceTree = "<group>"; };
 		6A6B408125B689CC0066176D /* FruitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitCollectionViewCell.swift; sourceTree = "<group>"; };
 		6A73EDA125BA9C9300DF875C /* HomePageCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageCoordinator.swift; sourceTree = "<group>"; };
 		6A73EDBE25BADEA900DF875C /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 		6A73EDC125BADEB800DF875C /* SecondController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 		6A73EDC425BADEC500DF875C /* SecondViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewModel.swift; sourceTree = "<group>"; };
 		6A73EDC825BAEAF900DF875C /* AppRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoutes.swift; sourceTree = "<group>"; };
-		6AA1D0E225B936F200160E34 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		6AA1D0E625B98EDC00160E34 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		6AA1D0E925B98EF200160E34 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		6AB30D9025C7F25400E98AF0 /* NutritionalValueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionalValueController.swift; sourceTree = "<group>"; };
@@ -134,6 +146,7 @@
 				6A5AD4AE25B16B3F009B2FF5 /* BaseView.swift */,
 				6A53844025B55F010036E91A /* BaseViewController.swift */,
 				6A53844225B5605F0036E91A /* BaseViewModel.swift */,
+				6A60779225D261B300AE401B /* BaseUIElementsConfig.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -161,7 +174,6 @@
 			children = (
 				6A5AD49225B1689B009B2FF5 /* SceneDelegate.swift */,
 				6A5AD49025B1689B009B2FF5 /* AppDelegate.swift */,
-				6AA1D0E225B936F200160E34 /* AppCoordinator.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -203,6 +215,35 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		6A60777A25D24ACB00AE401B /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				6A60777D25D24AE400AE401B /* Signup */,
+				6A60777B25D24AD400AE401B /* Login */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		6A60777B25D24AD400AE401B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6A60778825D24B3700AE401B /* LoginView.swift */,
+				6A60778B25D24B4B00AE401B /* LoginController.swift */,
+				6A60778E25D24B5900AE401B /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6A60777D25D24AE400AE401B /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				6A60777E25D24AFD00AE401B /* SignupView.swift */,
+				6A60778225D24B0E00AE401B /* SignupController.swift */,
+				6A60778525D24B2200AE401B /* SignupViewModel.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
 		6A73EDBD25BADE9300DF875C /* SecondPage */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +273,7 @@
 		6A936A3725B7FB1900E815AD /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6A60777A25D24ACB00AE401B /* Auth */,
 				6A73EDC725BAEAE800DF875C /* Helper */,
 				6A73EDBD25BADE9300DF875C /* SecondPage */,
 				6A7C168B25B83F2500E0818C /* Coordinator */,
@@ -329,18 +371,23 @@
 				6AB30D9125C7F25400E98AF0 /* NutritionalValueController.swift in Sources */,
 				6AB30D9725C7F29E00E98AF0 /* NutritionViewmodel.swift in Sources */,
 				6A5AD49125B1689B009B2FF5 /* AppDelegate.swift in Sources */,
+				6A60779325D261B300AE401B /* BaseUIElementsConfig.swift in Sources */,
 				6A539DD225B6BC4D00922AFE /* CollectionViewImage.swift in Sources */,
+				6A60778325D24B0E00AE401B /* SignupController.swift in Sources */,
 				6A73EDA225BA9C9300DF875C /* HomePageCoordinator.swift in Sources */,
 				6A73EDC225BADEB800DF875C /* SecondController.swift in Sources */,
 				6A5AD4AC25B16AE7009B2FF5 /* HomeViewModel.swift in Sources */,
 				6A5AD4A725B1692F009B2FF5 /* FruitsViewController.swift in Sources */,
+				6A60778C25D24B4B00AE401B /* LoginController.swift in Sources */,
 				6A73EDC925BAEAF900DF875C /* AppRoutes.swift in Sources */,
+				6A60778F25D24B5900AE401B /* LoginViewModel.swift in Sources */,
 				6A5AD49325B1689B009B2FF5 /* SceneDelegate.swift in Sources */,
 				6A53844125B55F010036E91A /* BaseViewController.swift in Sources */,
 				6AB30D9B25C7F2D600E98AF0 /* NutritionView.swift in Sources */,
 				6AA1D0EA25B98EF200160E34 /* BaseNavigationController.swift in Sources */,
 				6A5AD4C025B1A639009B2FF5 /* FruitsViewModel.swift in Sources */,
 				6A5AD4AA25B16AD9009B2FF5 /* HomeView.swift in Sources */,
+				6A60778625D24B2200AE401B /* SignupViewModel.swift in Sources */,
 				6A5AD4A525B1691C009B2FF5 /* HomePageViewController.swift in Sources */,
 				6A6B408225B689CC0066176D /* FruitCollectionViewCell.swift in Sources */,
 				6A5AD4BE25B1A039009B2FF5 /* FruitsView.swift in Sources */,
@@ -348,9 +395,10 @@
 				6A5AD4B925B16D72009B2FF5 /* Data.swift in Sources */,
 				6A73EDBF25BADEA900DF875C /* SecondView.swift in Sources */,
 				6AB30DA025C81A8E00E98AF0 /* NutrititonData.swift in Sources */,
+				6A60777F25D24AFD00AE401B /* SignupView.swift in Sources */,
 				6A53844325B5605F0036E91A /* BaseViewModel.swift in Sources */,
-				6AA1D0E325B936F200160E34 /* AppCoordinator.swift in Sources */,
 				6A5AD4AF25B16B3F009B2FF5 /* BaseView.swift in Sources */,
+				6A60778925D24B3700AE401B /* LoginView.swift in Sources */,
 				6A5AD4C325B1AD1A009B2FF5 /* MyCustomCollectionCell.swift in Sources */,
 				6A5AD4BC25B19604009B2FF5 /* TrainingLayout.swift in Sources */,
 			);
