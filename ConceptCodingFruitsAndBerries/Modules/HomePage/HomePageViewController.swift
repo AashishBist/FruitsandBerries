@@ -38,10 +38,12 @@ class HomePageViewController: BaseViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        screenView.rightNavBtn.addTarget(self, action: #selector(rightNavigationButtonClicked), for: .touchUpInside)
     }
     
     override func rightNavigationButtonClicked() {
         screenViewModel.trigger?(.secondPage)
+        
     }
     
     

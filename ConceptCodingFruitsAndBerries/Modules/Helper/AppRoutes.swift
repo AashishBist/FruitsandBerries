@@ -13,7 +13,7 @@ import UIKit
 enum AppRoutes{
     case homePage
     case secondPage
-    case signUP
+    case signup
     case login
     case forgotPassWord
 }

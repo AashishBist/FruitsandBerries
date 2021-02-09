@@ -17,4 +17,9 @@ class SecondController:BaseViewController{
     private lazy var screenViewModel:SecondViewModel = {
        baseViewModel as! SecondViewModel
     }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+    }
 }

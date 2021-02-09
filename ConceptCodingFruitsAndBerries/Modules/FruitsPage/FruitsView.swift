@@ -174,15 +174,15 @@ final class FruitsView:BaseView{
         return label
     }()
     
-    private lazy var productDescription:UILabel = {
-        let label = UILabel()
-        
-        guard let fruit = fruit else {return label}
-        label.text = fruit.productDescription
-        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
-        label.numberOfLines = 4
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    private lazy var productDescription:UITextView = {
+        let textView = UITextView()
+        guard let fruit = fruit else {return textView}
+        textView.text = fruit.productDescription
+        textView.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        textView.isEditable = false
+        textView.isScrollEnabled = true
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
     }()
     
     private lazy var addToCartButton:UIButton = {
@@ -288,14 +288,12 @@ final class FruitsView:BaseView{
     }
     
     private func setItemViewLayout(){
-        NSLayoutConstraint.activate([mainItemsContainerView.topAnchor.constraint(equalTo: fullScreenScrollView.topAnchor),
-                                     mainItemsContainerView.bottomAnchor.constraint(equalTo: fullScreenScrollView.bottomAnchor),
-                                     mainItemsContainerView.leadingAnchor.constraint(equalTo: fullScreenScrollView.leadingAnchor),
-                                     mainItemsContainerView.trailingAnchor.constraint(equalTo: fullScreenScrollView.trailingAnchor),mainItemsContainerView.widthAnchor.constraint(equalTo: fullScreenScrollView.widthAnchor, multiplier: 1)
-                                    ])
+        mainItemsContainerView.pin(to: fullScreenScrollView)
+
     }
     
     private func fullScreenScrollViewLayout(){
+        
         NSLayoutConstraint.activate([fullScreenScrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),fullScreenScrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
                                      fullScreenScrollView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
                                      fullScreenScrollView.topAnchor.constraint(equalTo: topAnchor, constant: 0),

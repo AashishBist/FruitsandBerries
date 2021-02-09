@@ -16,19 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fruitsLaunchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="hzD-ht-StR">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fruits" translatesAutoresizingMaskIntoConstraints="NO" id="TI2-1c-eLS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8wz-KO-xmO"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hzD-ht-StR" firstAttribute="leading" secondItem="l6V-VE-SQg" secondAttribute="leading" id="Fj8-j3-s6v"/>
-                            <constraint firstItem="hzD-ht-StR" firstAttribute="top" secondItem="l6V-VE-SQg" secondAttribute="top" id="SDG-Bi-j52"/>
-                            <constraint firstAttribute="trailing" secondItem="hzD-ht-StR" secondAttribute="trailing" id="YWa-kl-9U5"/>
-                            <constraint firstItem="hzD-ht-StR" firstAttribute="centerX" secondItem="l6V-VE-SQg" secondAttribute="centerX" id="fYm-cz-cIU"/>
-                            <constraint firstAttribute="bottom" secondItem="hzD-ht-StR" secondAttribute="bottom" id="hKi-Rd-KAV"/>
-                            <constraint firstItem="hzD-ht-StR" firstAttribute="centerY" secondItem="l6V-VE-SQg" secondAttribute="centerY" id="q2L-l4-8Zl"/>
+                            <constraint firstAttribute="trailing" secondItem="TI2-1c-eLS" secondAttribute="trailing" id="3S1-Xu-dzq"/>
+                            <constraint firstAttribute="bottom" secondItem="TI2-1c-eLS" secondAttribute="bottom" id="BUw-YV-kFK"/>
+                            <constraint firstItem="TI2-1c-eLS" firstAttribute="leading" secondItem="l6V-VE-SQg" secondAttribute="leading" id="JsC-N9-WSm"/>
+                            <constraint firstItem="TI2-1c-eLS" firstAttribute="top" secondItem="l6V-VE-SQg" secondAttribute="top" id="z47-PO-RZe"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="fruitsLaunchScreen" width="4000" height="6000"/>
+        <image name="Fruits" width="1023" height="682"/>
     </resources>
 </document>

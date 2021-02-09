@@ -7,3 +7,21 @@
 //
 
 import Foundation
+import UIKit
+
+class SignupController:BaseViewController{
+   
+    private lazy var screenView:SignupView = {
+        baseView as! SignupView
+    }()
+    
+    private lazy var screenViewModel:SignupViewModel = {
+       baseViewModel as! SignupViewModel
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+
+}

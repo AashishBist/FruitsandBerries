@@ -13,6 +13,7 @@ class HomeViewModel:BaseViewModel{
     
     var fruits:[Fruit]
     
+    
     init(with fruits: [Fruit]) { 
         
         self.fruits = fruits

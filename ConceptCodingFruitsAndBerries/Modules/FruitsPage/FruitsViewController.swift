@@ -34,6 +34,7 @@ class FruitsViewController: BaseViewController,UIScrollViewDelegate,UIGestureRec
         screenView.topFruitCollectionView.register(FruitCollectionViewCell.self, forCellWithReuseIdentifier: FruitCollectionViewCell.identifier)
         setCustomNavigationBarButtons()
         screenView.fruitNutritionalValueButton.addTarget(self, action: #selector(NutritionButtonClicked), for: .touchUpInside)
+        
     }
     @objc private func NutritionButtonClicked(){
     

@@ -23,7 +23,7 @@ final class HomeView:BaseView{
         return lbtn
     }()
     
-    private lazy var rightNavBtn:UIButton = {
+     lazy var rightNavBtn:UIButton = {
         let rbtn = UIButton()
         rbtn.setImage(UIImage(systemName: "line.horizontal.3.decrease"), for: .normal)
         rbtn.tintColor = .black

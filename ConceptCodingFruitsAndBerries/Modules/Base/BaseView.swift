@@ -12,6 +12,18 @@ import UIKit
 
 class BaseView:UIView{
    
+//    lazy var BaseTextField:UITextField = {
+//       let textfield = UITextField()
+//        let padding = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 50))
+//        textfield.leftView = padding
+//        textfield.leftViewMode = .always
+//        textfield.autocorrectionType = .no
+//        textfield.autocapitalizationType = .none
+//        textfield.translatesAutoresizingMaskIntoConstraints = false
+//        return textfield
+//    }()
+    
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,11 +48,10 @@ class BaseView:UIView{
    
 }
 
-extension BaseView{
-    
-    ///This function helps to pin the subView in the mainView.
-    func pin(to superView:BaseView){
+extension UIView{
+    func pin(to superView:UIView){
         translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([leadingAnchor.constraint(equalTo: superView.leadingAnchor),trailingAnchor.constraint(equalTo: superView.trailingAnchor),heightAnchor.constraint(equalTo: superView.heightAnchor),topAnchor.constraint(equalTo: superView.topAnchor)])
+        NSLayoutConstraint.activate([leadingAnchor.constraint(equalTo: superView.leadingAnchor),trailingAnchor.constraint(equalTo: superView.trailingAnchor),bottomAnchor.constraint(equalTo: superView.bottomAnchor),topAnchor.constraint(equalTo: superView.topAnchor)])
     }
 }
+
